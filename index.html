@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="./assets/img/icon-form.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="./assets/main.js" defer></script>
+    <title>JS Form</title>
+</head>
+<body>
+
+    <h1>Validation de formulaire</h1>
+
+    <main>
+
+        <form action="/" method="POST">
+            <div class="form-field">
+                <label for="username">
+                    Nom d'utilisateur&nbsp;
+                    <i class="bi bi-info-circle">
+                        <div class="tooltip">
+                            Le nom d'utilisateur ne peut contenir que des lettres et des chiffres ainsi que des tirets (<code>-</code> ou <code>_</code>), sauf au début et à la fin.<br>Exemple&thinsp;: <code>son_goku75</code>.
+                        </div>
+                    </i>
+                </label>
+                <input type="text" id="username" required>
+            </div>
+
+            <div class="form-field">
+                <label for="email_address">Courriel</label>
+                <input type="email" id="email_address" placeholder="monadresse@email.com" required>
+            </div>
+
+            <div class="form-field">
+                <label for="password1">
+                    Mot de passe&nbsp;<i class="bi bi-info-circle">
+                        <div class="tooltip">
+                            Le mot de passe doit contenir&thinsp;:
+                            <ul>
+                                <li>de 8 à 20 caractères et au minimum</li>
+                                <li>une minuscule</li>
+                                <li>une majuscule</li>
+                                <li>un chiffre</li>
+                                <li>un symbole (signe de ponctuation)</li>
+                            </ul>
+                        </div>
+                    </i>
+                </label>
+                <input type="password" id="password1" required>
+            </div>
+
+            <div class="form-field">
+                <label for="password2">Confirmer le mot de passe</label>
+                <input type="password" id="password2" required>
+            </div>
+
+            <div id="show-password">
+                <input type="checkbox" id="show-password-checkbox">
+                <label for="show-password-checkbox">Voir le mot de passe</label>
+            </div>
+
+            <div id="form-submit">
+                <button>Valider</button>
+            </div>
+        </form>
+
+
+
+    </main>
+    
+</body>
+</html>

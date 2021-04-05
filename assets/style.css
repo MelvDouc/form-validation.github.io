@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css");
+
+:root {
+    --fontFamily1: 'Montserrat', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --formWidth: 50%;
+    --gradient1: radial-gradient(rgb(0,128,128), rgb(0,145,145));
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fontFamily1);
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+}
+
+/*  */
+/*  */
+
+h1 {
+    text-align: center;
+    font-size: 2.45rem;
+    color: white;
+    background: var(--gradient1);
+    padding: .5em;
+}
+
+/*  */
+/*  */
+
+code {
+    background-color: rgb(214, 214, 214);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/*  */
+/*  */
+
+main {
+    background: url("./img/mountains.jpg") center / cover no-repeat;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 1em;
+}
+
+/*  */
+/*  */
+
+form {
+    width: var(--formWidth);
+    min-height: 50%;
+    background: var(--gradient1);
+    box-shadow: 1px 1px 5px 0px lightblue;
+    border-radius: 5px;
+    padding: .75em .75em 0 .75em;
+    display: grid;
+    grid-template-rows: repeat(4, 2fr) 1fr 4fr;
+    justify-items: center;
+}
+
+form > div {
+    padding: .5em 0;
+}
+
+/*  */
+/*  */
+
+.form-field {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+}
+
+label {
+    color: white;
+}
+
+label[for="username"],
+label[for="password1"] {
+    display: block;
+    position: relative;
+}
+
+.tooltip {
+    width: fit-content;
+    position: absolute;
+    right: 0;
+    bottom: 50%;
+    padding: .5em;
+    border: 2px solid #333;
+    border-radius: 4px 0;
+    background-color: rgb(253, 240, 218);
+    color: black;
+    /* transform: translateX(105%); */
+    display: none;
+}
+
+.tooltip ul {
+    margin: .5em 0 0 .5em;
+}
+
+.tooltip li {
+    font-size: .925em;
+    list-style-position: inside;
+}
+
+i {
+    font-style: normal;
+}
+
+i:hover {
+    color: gold;
+}
+
+i:hover .tooltip {
+    display: block;
+    animation: fadeIn .2s linear;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*  */
+/*  */
+
+input:not(input[type="checkbox"]) {
+    all: unset;
+    background-color: white;
+    height: 2em;
+    width: 100%;
+    box-sizing: border-box;
+    padding: .2em .5em;
+}
+
+input[type="checkbox"] {
+    margin-right: .75em;
+}
+
+#show-password {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/*  */
+/*  */
+
+#form-submit {
+    display: grid;
+    place-items: center;
+    border-top: 1px solid rgb(0, 123, 123);
+    width: 90%;
+}
+
+button {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background: rgb(250,250,250);
+    font-family: var(--fontFamily1);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: .75em .9em;
+    border-radius: 9999px;
+    cursor: pointer;
+    user-select: none;
+    touch-action: none;
+    transition: .2s linear;
+}
+
+button:hover {
+    box-shadow:
+        1px 1px 3px 1px #bbb,
+        -1px -1px 3px 1px #bbb;
+}
+
+button:active {
+    transform: scale(.925);
+}
+
+/*  */
+/*  */
+
+@media screen and (max-width: 992px) {
+    :root {
+        --formWidth: 90%;
+    }
+
+    label {
+        max-width: 50%;
+        padding-right: .85em;
+    }
+}
