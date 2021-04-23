@@ -20,8 +20,8 @@ html, body {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 5fr;
     flex-basis: auto;
 }
 
@@ -203,7 +203,7 @@ button:active {
 /*  */
 /*  */
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
     :root {
         --formWidth: 90%;
     }
@@ -211,5 +211,17 @@ button:active {
     label {
         max-width: 50%;
         padding-right: .85em;
+    }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 992px) {
+
+    .form-field {
+        grid-template-columns: unset;
+    }
+
+    label {
+        max-width: unset;
+        margin-bottom: .25em;
     }
 }
